@@ -7,21 +7,20 @@
 (defn lines [text] (remove blank? (split text #"\n+")))
 
 (defn text-input []
-  [:div.text-input.padded.left
-   [:h2 "Input"]
+  [:div.text-input.box.left
+   [:h2 (str "Input (" (count (lines @input)) " lines)")]
    [:textarea {:value @input
-               :rows 75
-               :cols 50
+               :style { :width "90%" :height "700px" }
                :on-change #(reset! input (-> % .-target .-value))}]])
 
 (defn uniq-output []
-  [:div.text-output.padded.left
-   [:h2 "Uniq"]
-   [:textarea
-    {:rows 75
-     :cols 40
-     :value (join "\n" (sort (map str (into #{} (lines @input)))))
-     }]])
+  (let [sorted (sort (map str (into #{} (lines @input))))]
+    [:div.text-output.box.left
+     [:h2 (str "Uniq (" (count sorted) " lines)")]
+      [:textarea
+       {:style { :width "90%" :height "700px" }
+        :value (join "\n" sorted)
+        }]]))
 
 (defn uniqifier []
   [:div

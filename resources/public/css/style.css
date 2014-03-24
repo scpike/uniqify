@@ -1,0 +1,168 @@
+/*****************************************************************************/
+/*
+  /* Common
+  /*
+  /*****************************************************************************/
+
+$body_text_color: #333;
+$background-color: #FDFFFC;
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: $background-color;
+  color: $body_text_color;
+  font: 13.34px helvetica, arial, clean, sans-serif;
+  *font-size: small;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: #00a;
+}
+
+a:hover {
+  color: black;
+}
+
+table {
+  font-size: inherit;
+  font: 100%;
+}
+
+/*****************************************************************************/
+/*
+  /* Home
+  /*
+  /*****************************************************************************/
+
+ul.posts {
+  list-style-type: none;
+  margin-bottom: 1em;
+}
+
+ul.posts li {
+  line-height: 1.75em;
+}
+
+ul.posts span {
+  color: #aaa;
+  font-family: Monaco, "Courier New", monospace;
+  font-size: 80%;
+}
+
+/*****************************************************************************/
+/*
+  /* Site
+  /*
+  /*****************************************************************************/
+
+.site {
+  font-size: 110%;
+  text-align: left;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  line-height: 1.5em;
+}
+
+.column {
+  margin-right: 2em;
+}
+
+.title, .title a {
+  color: #a00;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  font-family: palatino, "Times New Roman";
+  color: rgb(5, 82, 48);
+  text-decoration: none;
+}
+
+.site .title a:hover {
+  color: black;
+}
+
+.site .title a.extra {
+  color: #aaa;
+  text-decoration: none;
+  margin-left: 1em;
+}
+
+.site .title a.extra:hover {
+  color: black;
+}
+
+.site .meta {
+  color: #aaa;
+}
+
+.site .footer {
+  width: 100%;
+  font-size: 100%;
+  color: #666;
+  border-top: 2px solid #bbb;
+  margin-top: 2em;
+  overflow: hidden;
+}
+
+.site .footer .contact a {
+  color: #8085C1;
+}
+
+.site .footer .rss {
+  margin-top: 1.1em;
+  margin-right: -.2em;
+  float: right;
+}
+
+.site .footer .rss img {
+  border: 0;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.intro {
+  margin-bottom: 1.5em;
+}
+
+
+/*** Block Quotes *///
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}

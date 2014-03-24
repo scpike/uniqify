@@ -1,0 +1,21 @@
+// Compiled by ClojureScript 0.0-2156
+goog.provide('uniqify.core');
+goog.require('cljs.core');
+goog.require('reagent.core');
+goog.require('clojure.string');
+goog.require('reagent.core');
+goog.require('reagent.core');
+goog.require('clojure.string');
+uniqify.core.input = reagent.core.atom.call(null,"");
+uniqify.core.lines = (function lines(text){return cljs.core.remove.call(null,clojure.string.blank_QMARK_,clojure.string.split.call(null,text,/\n+/));
+});
+uniqify.core.text_input = (function text_input(){return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.text-input.padded.left","div.text-input.padded.left",2872235344),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",1013907516),"Input"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"textarea","textarea",4305627820),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"value","value",1125876963),cljs.core.deref.call(null,uniqify.core.input),new cljs.core.Keyword(null,"rows","rows",1017410891),75,new cljs.core.Keyword(null,"cols","cols",1016963685),50,new cljs.core.Keyword(null,"on-change","on-change",606853840),(function (p1__5012_SHARP_){return cljs.core.reset_BANG_.call(null,uniqify.core.input,p1__5012_SHARP_.target.value);
+})], null)], null)], null);
+});
+uniqify.core.uniq_output = (function uniq_output(){return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div.text-output.padded.left","div.text-output.padded.left",1533631725),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"h2","h2",1013907516),"Uniq"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"textarea","textarea",4305627820),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"rows","rows",1017410891),75,new cljs.core.Keyword(null,"cols","cols",1016963685),40,new cljs.core.Keyword(null,"value","value",1125876963),clojure.string.join.call(null,"\n",cljs.core.sort.call(null,cljs.core.map.call(null,cljs.core.str,cljs.core.into.call(null,cljs.core.PersistentHashSet.EMPTY,uniqify.core.lines.call(null,cljs.core.deref.call(null,uniqify.core.input))))))], null)], null)], null);
+});
+uniqify.core.uniqifier = (function uniqifier(){return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1014003715),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1014003715),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [uniqify.core.text_input], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [uniqify.core.uniq_output], null)], null)], null);
+});
+uniqify.core.run = (function run(){return reagent.core.render_component.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [uniqify.core.uniqifier], null),document.getElementById("mount-point"));
+});
+goog.exportSymbol('uniqify.core.run', uniqify.core.run);

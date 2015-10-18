@@ -22,11 +22,24 @@
         :value (join "\n" sorted)
         }]]))
 
+(defn counts-output []
+  (let [xs (lines @input)]
+    [:div.text-output.box.left
+     [:h2 (str "Counts")]
+      [:textarea
+       {:style { :width "90%" :height "700px" }
+        :value
+        (join "\n" (map
+                    #(str (first %) "\t" (count (last %)))
+                    (reverse (sort-by #(count (last %)) (group-by identity xs)))))
+        }]]))
+
 (defn uniqifier []
   [:div
    [:div
     [text-input]
-    [uniq-output]]])
+    [uniq-output]
+    [counts-output]]])
 
 (defn ^:export run []
   (reagent/render-component [uniqifier]

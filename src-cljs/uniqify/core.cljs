@@ -19,6 +19,7 @@
      [:h2 (str "Uniq (" (count sorted) " lines)")]
       [:textarea
        {:style { :width "90%" :height "700px" }
+        :readOnly true
         :value (join "\n" sorted)
         }]]))
 
@@ -28,6 +29,7 @@
      [:h2 (str "Counts")]
       [:textarea
        {:style { :width "90%" :height "700px" }
+        :readOnly true
         :value
         (join "\n" (map
                     #(str (first %) "\t" (count (last %)))
@@ -42,5 +44,5 @@
     [counts-output]]])
 
 (defn ^:export run []
-  (reagent/render-component [uniqifier]
-                            (.getElementById js/document "mount-point")))
+  (reagent/render [uniqifier]
+                  (.getElementById js/document "mount-point")))
